@@ -15,13 +15,9 @@ public class TransferTest {
   private int FIRST_CARD = 0;
   private int SECOND_CARD = 1;
 
-  @BeforeEach
-  void shouldStart() {
-    open("http://localhost:9999/");
-  }
-
   @Test
   void shouldTransferMoneyFromCard1ToCard2() {
+    open("http://localhost:9999");
     var loginPage = new LoginPage();
     var authInfo = DataHelper.getAuthInfo();
     var verificationPage = loginPage.sucessfulLogin(authInfo);
@@ -39,6 +35,7 @@ public class TransferTest {
 
   @Test
   void shouldTransferMoneyFromCard2ToCard1() {
+    open("http://localhost:9999");
     var loginPage = new LoginPage();
     var authInfo = DataHelper.getAuthInfo();
     var verificationPage = loginPage.sucessfulLogin(authInfo);
@@ -56,6 +53,7 @@ public class TransferTest {
 
   @Test
   void shouldTransferFromCard2ToCard1HugeSum() {
+    open("http://localhost:9999");
     var loginPage = new LoginPage();
     var authInfo = DataHelper.getAuthInfo();
     var verificationPage = loginPage.sucessfulLogin(authInfo);
@@ -72,6 +70,7 @@ public class TransferTest {
 
   @Test
   void shouldTransferFromCard1ToCard2HugeSum() {
+    open("http://localhost:9999");
     var loginPage = new LoginPage();
     var authInfo = DataHelper.getAuthInfo();
     var verificationPage = loginPage.sucessfulLogin(authInfo);
@@ -88,6 +87,7 @@ public class TransferTest {
 
   @Test
   void shouldTransferFromCard2ToCard1ZeroTest() {
+    open("http://localhost:9999");
     var loginPage = new LoginPage();
     var authInfo = DataHelper.getAuthInfo();
     var verificationPage = loginPage.sucessfulLogin(authInfo);
@@ -105,6 +105,7 @@ public class TransferTest {
 
   @Test
   void shouldTransferFromCard1ToCard2ZeroTest() {
+    open("http://localhost:9999");
     var loginPage = new LoginPage();
     var authInfo = DataHelper.getAuthInfo();
     var verificationPage = loginPage.sucessfulLogin(authInfo);
